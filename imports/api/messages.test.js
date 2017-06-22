@@ -29,14 +29,8 @@ if (Meteor.isServer) {
     	});
       it('can delete owned task', function(){
       	const deleteMessage = Meteor.server.method_handlers['messages.remove'];
- 
-        // Set up a fake method invocation that looks like what the method expects
         const invocation = { userId };
- 
-        // Run the method with `this` set to the fake invocation
         deleteMessage.apply(invocation, [messageId]);
- 
-        // Verify that the method does what we expected
         assert.equal(Messages.find().count(), 0);
       });
     });

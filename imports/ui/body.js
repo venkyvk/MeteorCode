@@ -22,17 +22,10 @@ Template.body.helpers({
 
 Template.body.events({
   'submit .new-message'(event) {
-    // Prevent default browser form submit
-    event.preventDefault();
-
-    // Get value from form element
+      event.preventDefault();
     const target = event.target;
     const text = target.text.value;
-
-    // Insert a message into the collection
     Meteor.call('messages.insert', text);
-
-    // Clear form
     target.text.value = '';
   }, 
 });
