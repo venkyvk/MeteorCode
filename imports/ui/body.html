@@ -1,0 +1,25 @@
+<body>
+	<div class="container">
+		
+		<header>
+			<h2>Please Register or Sign-in to Continue</h2>
+
+			{{> loginButtons}}
+
+			{{#if currentUser}}
+				<form class="new-message">
+					<input type="text" name="text" placeholder="Please input a message">
+				</form>
+			{{/if}}
+		</header>
+		
+		{{#if currentUser}}
+		<ul>
+			{{#each messages}}
+				{{> message}}
+			{{/each}}
+		</ul>
+		{{/if}}
+	</div>
+</body>
+

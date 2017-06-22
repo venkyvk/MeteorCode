@@ -1,0 +1,6 @@
+<template name="message">
+  <li class="{{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+  </li>
+</template>
